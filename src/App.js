@@ -4,8 +4,10 @@ import Note from "./components/Note";
 import "./styles.css";
 
 export default function App() {
-  const [note, setNote] = useLocalStorageState("note");
-  const [font, setFont] = useLocalStorageState("font");
+  const [note, setNote] = useLocalStorageState("note", { defaultValue: "" });
+  const [font, setFont] = useLocalStorageState("font", {
+    defaultValue: "'Chalkduster'",
+  });
 
   function handleNoteChange(newNote) {
     setNote(newNote);
